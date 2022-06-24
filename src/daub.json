@@ -1,0 +1,63 @@
+{"frames": {
+
+"daub28.png":
+{
+	"frame": {"x":0,"y":0,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45}
+},
+"daub29.png":
+{
+	"frame": {"x":45,"y":0,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45}
+},
+"daub30.png":
+{
+	"frame": {"x":90,"y":0,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45}
+},
+"daub31.png":
+{
+	"frame": {"x":135,"y":0,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45}
+},
+"daub32.png":
+{
+	"frame": {"x":180,"y":0,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45}
+},
+"daub33.png":
+{
+	"frame": {"x":225,"y":0,"w":45,"h":45},
+	"rotated": false,
+	"trimmed": false,
+	"spriteSourceSize": {"x":0,"y":0,"w":45,"h":45},
+	"sourceSize": {"w":45,"h":45}
+}},
+"animations": {
+	"daub": ["daub28.png","daub29.png","daub30.png","daub31.png","daub32.png","daub33.png"]
+},
+"meta": {
+	"app": "https://www.codeandweb.com/texturepacker",
+	"version": "1.0",
+	"image": "daub.png",
+	"format": "RGBA8888",
+	"size": {"w":270,"h":45},
+	"scale": "1",
+	"smartupdate": "$TexturePacker:SmartUpdate:60d6a86e40a509952f10ff62e816e44b:9bcfe2f860c1e6b72470a689616f4da2:0df47b471b804671834d1a12d5fee2cc$"
+}
+}
