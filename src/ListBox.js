@@ -195,22 +195,25 @@ export class ListBox extends PIXI.Container {
     );
     mask.endFill();
 
+    var maskContainer = new PIXI.Container();
+    maskContainer.mask = mask;
+    maskContainer.interactive = true;
+    maskContainer.addChild(mask);
+
     var rowsContainer = new PIXI.Container();
-    rowsContainer.mask = mask;
-    rowsContainer.interactive = true;
-    rowsContainer.addChild(mask);
+    maskContainer.addChild((this.rowsContainer = rowsContainer));
 
     const wheelEventHandler = (e) => {
       e.preventDefault();
       console.log(e.deltaY);
-      rowsContainer.y += -e.deltaY;
+      this.rowsContainer.y += -e.deltaY;
     };
 
-    rowsContainer.pointerover = () =>
+    maskContainer.pointerover = () =>
       window.addEventListener("wheel", wheelEventHandler, { passive: false });
-    rowsContainer.pointerout = () =>
+    maskContainer.pointerout = () =>
       window.removeEventListener("wheel", wheelEventHandler);
 
-    this.addChild((this.rowsContainer = rowsContainer));
+    this.addChild(maskContainer);
   }
 }
