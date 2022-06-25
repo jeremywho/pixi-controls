@@ -104,7 +104,11 @@ const rows = [
   { id: "row_five", columns: ["Five", "Yes", "No", ""] },
   { id: "row_six", columns: ["Six", "Yes", "No", "6"] },
   { id: "row_seven", columns: ["Seven", "Yes", "No", "7"] },
-  { id: "row_eight", columns: ["Eight", "Yes", "No", "8"] }
+  { id: "row_eight", columns: ["Eight", "Yes", "No", "8"] },
+  { id: "row_nine", columns: ["Five", "Yes", "No", ""] },
+  { id: "row_ten", columns: ["Six", "Yes", "No", "6"] },
+  { id: "eleven", columns: ["Seven", "Yes", "No", "7"] },
+  { id: "row_12", columns: ["Eight", "Yes", "No", "8"] }
 ];
 
 for (const c of rows) {

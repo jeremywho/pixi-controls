@@ -77,7 +77,7 @@ export class ListBox extends PIXI.Container {
       if (i > 0) {
         var line = new PIXI.Graphics();
         line.lineStyle(2, 0xc0c0c0, 1);
-        line.moveTo(i * columnWidth, 0);
+        line.moveTo(i * columnWidth, rowHeight);
         line.lineTo(i * columnWidth, rowY + rowHeight);
         rowContainer.addChild(line);
       }
@@ -97,6 +97,10 @@ export class ListBox extends PIXI.Container {
     const rowNum = this.rows.length + 1;
     this.rows.push(data);
     this.drawRow(data, rowNum);
+    this.startingInnerBottom =
+      (this.rowHeight + this.borderThickness - 1) * this.rows.length +
+      this.rowsContainer.y +
+      this.y;
   }
 
   addHeader(data) {
@@ -205,8 +209,29 @@ export class ListBox extends PIXI.Container {
 
     const wheelEventHandler = (e) => {
       e.preventDefault();
-      console.log(e.deltaY);
-      this.rowsContainer.y += -e.deltaY;
+
+      const delta = -e.deltaY / 5;
+      if (delta > 0) {
+        if (this.rowsContainer.y + delta >= 0) {
+          this.rowsContainer.y = 0;
+        } else {
+          this.rowsContainer.y += delta;
+        }
+        return;
+      }
+
+      const proposedInnerBottom =
+        (rowHeight + borderOffset) * this.rows.length +
+        this.rowsContainer.y +
+        this.y +
+        delta;
+
+      const outerBottom = this.rowsContainer.height;
+      if (proposedInnerBottom >= outerBottom) {
+        this.rowsContainer.y = proposedInnerBottom - this.startingInnerBottom;
+      } else {
+        this.rowsContainer.y = outerBottom - this.startingInnerBottom;
+      }
     };
 
     maskContainer.pointerover = () =>
